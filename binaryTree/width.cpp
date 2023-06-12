@@ -36,7 +36,7 @@ int getWidth(TreeNode *root)
 }
 
 // 考虑空结点（leetcode 662）
-int widthOfBinaryTree(TreeNode *root)
+unsigned long long widthOfBinaryTree(TreeNode *root)
 {
     unsigned long long width = 0;
     queue<pair<TreeNode *, unsigned long long>> q;
