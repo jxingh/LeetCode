@@ -23,7 +23,7 @@ void getNext(string s) {
  
 int main() {
 
-    string str;
+    	string str;
 	cin >> str;
 	int len = str.length();
 	getNext(str);	// KMP
