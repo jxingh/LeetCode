@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string multiply(const string& a, const string& b) {
+string multiply(const string &a, const string &b) {
+    if (a == "0" || b == "0")
+        return "0";
     int n = a.size(), m = b.size();
     vector<int> res(n + m);
     int x, y;
@@ -18,17 +20,15 @@ string multiply(const string& a, const string& b) {
     while (i < res.size() && res[i] == 0) {
         i++;
     }
-    if (i == res.size()) {
-        return "0";
-    }
     string ans;
     while (i < res.size()) {
-        ans += res[i++] + '0';
+        ans += res[i] + '0';
+        i++;
     }
     return ans;
 }
 
-string divide(const string& a, const string& b) {
+string divide(const string &a, const string &b) {
     int n = a.size(), m = b.size();
     if (n < m || (n == m && a < b))
         return "0";
@@ -36,7 +36,8 @@ string divide(const string& a, const string& b) {
     string r = a.substr(0, m);
     for (int i = m; i <= n; i++) {
         int x = 0, y = 0;
-        while (r.size() > 0 && r[0] == '0') r = r.substr(1);
+        while (r.size() > 0 && r[0] == '0')
+            r = r.substr(1);
         if (r.size() > 0) {
             x = stoi(r);
         }
